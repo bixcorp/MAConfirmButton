@@ -55,7 +55,7 @@
 
         self.layer.needsDisplayOnBoundsChange = YES;
 
-        CGSize size = [disabled sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
+        CGSize size = [disabled sizeWithAttributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:kFontSize]}];
         CGRect r = self.frame;
         r.size.height = kHeight;
         r.size.width = size.width+kPadding;
@@ -85,7 +85,7 @@
 
         self.layer.needsDisplayOnBoundsChange = YES;
 
-        CGSize size = [title sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
+        CGSize size = [title sizeWithAttributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:kFontSize]}];
         CGRect r = self.frame;
         r.size.height = kHeight;
         r.size.width = size.width+kPadding;
@@ -113,17 +113,17 @@
         if (disabled) {
             [self setTitle:disabled forState:UIControlStateNormal];
             [self setTitleColor:kDisabledColor forState:UIControlStateNormal];
-            size = [disabled sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
+            size = [disabled sizeWithAttributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:kFontSize]}];
         }
         else if (selected) {
             [self setTitle:confirm forState:UIControlStateNormal];
             [self setTitleColor:kBuyColor forState:UIControlStateNormal];
-            size = [confirm sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
+            size = [confirm sizeWithAttributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:kFontSize]}];
         }
         else {
             [self setTitle:title forState:UIControlStateNormal];
             [self setTitleColor:tint forState:UIControlStateNormal];
-            size = [title sizeWithFont:[UIFont boldSystemFontOfSize:kFontSize]];
+            size = [title sizeWithAttributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:kFontSize]}];
         }
 
         size.width += kPadding;
